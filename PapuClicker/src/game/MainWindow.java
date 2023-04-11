@@ -79,6 +79,7 @@ public class MainWindow extends javax.swing.JFrame {
         jMenuItem8 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("PAPU CLICKER ALPHA 1");
 
         click.setText("El salto del papu");
         click.addActionListener(new java.awt.event.ActionListener() {
