@@ -33,9 +33,8 @@ public class MainWindow extends javax.swing.JFrame {
             FileWriter myWriter = new FileWriter("papusave.dat");
             myWriter.write(number);
             myWriter.close();
-            System.out.println("Successfully wrote to the file.");
+            System.out.println("Archivo guardado correctamente.");
         } catch (Exception e) {
-            System.out.println("An error occurred.");
             e.printStackTrace();
         }
     }
@@ -47,9 +46,8 @@ public class MainWindow extends javax.swing.JFrame {
             System.out.println(num);
             counter.setText(num);
             read.close();
-            System.out.println("Successfully wrote to the file.");
+            System.out.println("Archivo cargado correctamente.");
         } catch (Exception e) {
-            System.out.println("An error occurred.");
             e.printStackTrace();
         }
     }
@@ -278,13 +276,14 @@ public class MainWindow extends javax.swing.JFrame {
         try {
             File myObj = new File("papusave.dat");
             if (myObj.createNewFile()) {
-                System.out.println("File created: " + myObj.getName());
+                System.out.println("Archivo creado: " + myObj.getName());
             } else {
-                System.out.println("File already exists.");
+                System.out.println("El archivo de guardado ya existe.");
             }
         } catch (Exception e) {
             f = new JFrame();
-            JOptionPane.showMessageDialog(f, "CAGASTE");
+            JOptionPane.showMessageDialog(f, "No se ha podido crear el archivo."
+                    + " Puede que en esta carpeta no tengas permisos de escritura.");
             e.printStackTrace();
         }
 
