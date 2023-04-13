@@ -7,6 +7,7 @@ package game;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.nio.charset.StandardCharsets;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -30,9 +31,9 @@ public class MainWindow extends javax.swing.JFrame {
 
     public void saveFile() {
         try {
-            FileWriter myWriter = new FileWriter("papusave.dat");
-            myWriter.write(number);
-            myWriter.close();
+            FileWriter writer = new FileWriter("papusave.dat", StandardCharsets.UTF_8);
+            writer.write(number);
+            writer.close();
             System.out.println("Archivo guardado correctamente.");
         } catch (Exception e) {
             e.printStackTrace();
@@ -41,11 +42,9 @@ public class MainWindow extends javax.swing.JFrame {
     
     public void loadFile() {
         try {
-            FileReader read = new FileReader("papusave.dat");
-            String num = Integer.toString(read.read());
-            System.out.println(num);
-            counter.setText(num);
-            read.close();
+            FileReader reader = new FileReader("papusave.dat");
+            counter.setText(Integer.toString(reader.read()));
+            reader.close();
             System.out.println("Archivo cargado correctamente.");
         } catch (Exception e) {
             e.printStackTrace();
@@ -173,18 +172,19 @@ public class MainWindow extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(click)
-                .addGap(152, 152, 152))
             .addGroup(layout.createSequentialGroup()
                 .addGap(209, 209, 209)
                 .addComponent(counter)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(54, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(50, 50, 50))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(50, 50, 50))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(click)
+                        .addGap(145, 145, 145))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
