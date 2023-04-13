@@ -13,7 +13,6 @@ Cosas que me gustaría añadir al juego y que tengo marcadas como objetivo.
 <li>Tienda funcional con poderes auto-incrementales.</li>
 <li>Mejorar sistema de guardado con rutas relativas.</li>
 <li>Interfáz que medio decente (Aunque igual pierde la gracia xD)</li>
-<li>Base de datos simple con sistema de cuentas para guardado en la nube</li>
 </ul>
 
 ### Y que mas
