@@ -6,7 +6,7 @@ package game;
 
 /**
  *
- * @author Alejandro Martínez Domínguez
+ * @author ChaoticKarpa
  */
 public class Game {
 
