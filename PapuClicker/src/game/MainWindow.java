@@ -86,7 +86,7 @@ public class MainWindow extends javax.swing.JFrame {
         jMenuItem9 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("PAPU CLICKER ALPHA 2");
+        setTitle("PAPU CLICKER ALPHA 3");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         click.setText("EL SALTO DEL PAPU");
